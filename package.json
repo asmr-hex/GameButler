@@ -1,6 +1,6 @@
 {
   "name": "gamebutler",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "a tiny node game server.",
   "main": "./build/gamebutler.js",
   "scripts": {
