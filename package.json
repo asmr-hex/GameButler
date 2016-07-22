@@ -1,0 +1,29 @@
+{
+  "name": "gamebutler",
+  "version": "1.0.1",
+  "description": "a tiny node game server.",
+  "main": "./build/gamebutler.js",
+  "scripts": {
+    "start": "node ./build/gamebutler.js",
+    "build": "babel --presets es2015 src --out-dir build",
+    "watch": "babel --presets es2015 --watch src --out-dir build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/connorwalsh/GameButler.git"
+  },
+  "keywords": [
+    "games",
+    "server"
+  ],
+  "author": "c",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/connorwalsh/GameButler/issues"
+  },
+  "homepage": "https://github.com/connorwalsh/GameButler#readme",
+  "devDependencies": {
+    "babel-cli": "^6.11.4",
+    "babel-preset-es2015": "^6.9.0"
+  }
+}
