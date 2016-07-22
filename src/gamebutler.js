@@ -17,7 +17,7 @@ const PORT  = 8080
 
 // create server
 let server = http.createServer((request, response) => {
-    let uri = url.parse(request.url).pathname
+    let uri = url.parse(request.url).pathname.replace("%20", " ")
     let filename = path.join(BASE, uri)
     fs.stat(filename, (err, status) => {
 	if (err != null) {
@@ -53,6 +53,8 @@ let server = http.createServer((request, response) => {
 	    response.writeHead(200, {'Content-Type': mimeType});
 	    let fileStream = fs.createReadStream(filename)
             fileStream.pipe(response)
+	    
+	    console.log("- %s", filename)
 	}
     })
 }).listen(PORT, () => {

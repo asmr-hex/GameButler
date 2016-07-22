@@ -32,7 +32,7 @@ var PORT = 8080;
 
 // create server
 var server = _http2.default.createServer(function (request, response) {
-				var uri = _url2.default.parse(request.url).pathname;
+				var uri = _url2.default.parse(request.url).pathname.replace("%20", " ");
 				var filename = _path2.default.join(BASE, uri);
 				_fs2.default.stat(filename, function (err, status) {
 								if (err != null) {
@@ -68,6 +68,8 @@ var server = _http2.default.createServer(function (request, response) {
 												response.writeHead(200, { 'Content-Type': mimeType });
 												var fileStream = _fs2.default.createReadStream(filename);
 												fileStream.pipe(response);
+
+												console.log("- %s", filename);
 								}
 				});
 }).listen(PORT, function () {
